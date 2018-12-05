@@ -1,62 +1,56 @@
 [
-    {
-      "from": "#1",
-      "to": "#2",
-      "auto": {
-        "price": 12
-      },
-      "train": {
-        "price": 12
-      }
-    },
-    {
-      "from": "#1",
-      "to": "#3",
-      "auto": {
-        "price": 12
-      },
-      "train": {
-        "price": 12
-      }
-    },
-    {
-      "from": "#2",
-      "to": "#5",
-      "auto": {
-        "price": 12
-      },
-      "train": {
-        "price": 12
-      }
-    },
-    {
-      "from": "#5",
-      "to": "#1",
-      "auto": {
-        "price": 12
-      },
-      "train": {
-        "price": 12
-      }
-    },
-    {
-      "from": "#5",
-      "to": "#6",
-      "auto": {
-        "price": 12
-      },
-      "train": {
-        "price": 12
-      }
-    },
-    {
-      "from": "#4",
-      "to": "#6",
-      "auto": {
-        "price": 12
-      },
-      "train": {
-        "price": 12
-      }
+  {
+    "from": "#1" ,
+    "to": "#2" ,
+    "vehicle": {
+      "price": 12,
+      "time": 5,
+      "distance": 24
     }
-  ]
+  } ,
+  {
+    "from": "#1" ,
+    "to": "#3" ,
+    "vehicle": {
+      "price": 12,
+      "time": 5,
+      "distance": 24
+    }
+  } ,
+  {
+    "from": "#2" ,
+    "to": "#5" ,
+    "vehicle": {
+      "price": 12,
+      "time": 5,
+      "distance": 24
+    }
+  } ,
+  {
+    "from": "#5" ,
+    "to": "#1" ,
+    "vehicle": {
+      "price": 12,
+      "time": 5,
+      "distance": 24
+    }
+  } ,
+  {
+    "from": "#5" ,
+    "to": "#6" ,
+    "vehicle": {
+      "price": 12,
+      "time": 5,
+      "distance": 24
+    }
+  } ,
+  {
+    "from": "#4" ,
+    "to": "#6" ,
+    "vehicle": {
+      "price": 12,
+      "time": 5,
+      "distance": 24
+    }
+  }
+]
