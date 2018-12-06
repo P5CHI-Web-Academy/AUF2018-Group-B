@@ -1,7 +1,7 @@
 const pkg = require('./package')
 
 module.exports = {
-  mode: 'universal',
+  mode: 'spa',
 
   /*
    ** Headers of the page
@@ -38,17 +38,12 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: [
-    'element-ui/lib/theme-chalk/index.css'
-  ],
+  css: ['element-ui/lib/theme-chalk/index.css', '@/assets/scss/main.scss'],
 
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [
-    '@/plugins/element-ui',
-    '@/plugins/vue-konva'
-  ],
+  plugins: ['@/plugins/element-ui', '@/plugins/vue-konva'],
 
   /*
    ** Nuxt.js modules
@@ -85,5 +80,5 @@ module.exports = {
     extend(config) {
       config.resolve.alias['vue'] = 'vue/dist/vue.common'
     }
-  }
+  },
 }
