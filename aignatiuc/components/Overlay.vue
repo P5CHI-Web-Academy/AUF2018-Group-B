@@ -28,6 +28,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 5;
 }
 .overlay_body {
   position: absolute;
@@ -36,7 +37,7 @@ export default {
   background-color: white;
   opacity: 1;
   -webkit-filter: blur(5px);
-  z-index: 0;
+  z-index: 1;
   filter: blur(1rem);
 }
 
