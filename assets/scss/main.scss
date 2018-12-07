@@ -1,0 +1,13 @@
+@import '/variables';
+@import 'map/index';
+@import 'header/index';
+@import 'aside/index';
+@import 'overlay/index';
+
+
+.el-main {
+  background-image: url('/map.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0;
+}

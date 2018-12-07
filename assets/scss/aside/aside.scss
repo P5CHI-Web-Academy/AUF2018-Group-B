@@ -1,0 +1,37 @@
+.el-aside {
+  background-color: var(--asideBackground);
+  width: 300px;
+  position: relative;
+
+  &__body {
+    height: 100%;
+    position: relative;
+    text-align: center;
+    padding-top: 80px;
+  }
+
+
+  .el-button--primary {
+    margin: 30px auto;
+    width: 90%;
+    line-height: 40px;
+    position: relative;
+    color: var(--primaryBackground);
+    background: transparent;
+    border-color: var(--baseBorder);
+  }
+}
+
+.aside__logo {
+  bottom: 150px;
+  position: absolute;
+  max-width: 90%;
+  left: 3%;
+}
+
+.aside__icon {
+  width: 50px;
+  position: absolute;
+  left: 20px;
+  top: 10px;
+}
