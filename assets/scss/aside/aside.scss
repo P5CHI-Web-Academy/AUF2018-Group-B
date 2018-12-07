@@ -13,8 +13,8 @@
 
   .el-button--primary {
     margin: 30px auto;
-    width: 80%;
-    line-height: 20px;
+    width: 90%;
+    line-height: 40px;
     position: relative;
     color: var(--primaryBackground);
     background: transparent;
@@ -23,15 +23,15 @@
 }
 
 .aside__logo {
-  bottom: 70px;
+  bottom: 150px;
   position: absolute;
-  max-width: 50%;
-  left: 20%;
+  max-width: 90%;
+  left: 3%;
 }
 
 .aside__icon {
-  width: 37px;
+  width: 50px;
   position: absolute;
   left: 20px;
-  top: 4px;
+  top: 10px;
 }

@@ -29,18 +29,18 @@ export default {
     // const stage = this.$refs.stage.getStage()
     for (let key in this.noduri) {
       this.points.push({
-        x: this.noduri[key][0] * 30,
-        y: this.noduri[key][1] * 30,
+        x: this.noduri[key][0] * 60,
+        y: this.noduri[key][1] * 43,
         scaleX: 1,
         scaleY: 1,
         radius: 10,
         stroke: '#5fb0e4',
-        strokeWidth: 2,
+        strokeWidth: 3,
         fill: '#a80808d0'
       })
     }
     // console.log(stage)
-
+    
     const drawLines = () => ({})
   }
 }

@@ -2,7 +2,7 @@
   <div class="el-aside__body">
     <img src="/logo.png" alt="Logo" class="aside__logo">
     <el-row>
-      <el-button type="primary"  @click="alertType('Car')" >
+      <el-button type="primary" @click="alertType('Car')" >
         <img src="/svg-car.svg" alt="Car" class="aside__icon">
         Auto
       </el-button>
@@ -26,7 +26,8 @@
 export default {
 methods: {
   alertType(selected){
-    alert(`You selected ${selected}`);
+    // alert(`You selected ${selected}`);
+    alert(`Distance\nTemps\nPrix\nDisponibilite`);
   }
 }
 }
