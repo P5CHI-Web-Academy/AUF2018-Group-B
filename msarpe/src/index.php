@@ -6,6 +6,70 @@ include "dijkstra.php";
 $string = file_get_contents("nw.json");
 $data = json_decode($string, true);
 
+{
+    $vehicleGraph = [];
+    foreach ($data as $index => $path) {
+        $vehicleGraph[$path['from']][$path['to']] = $path['vehicle']['price'];
+    }
+
+    $dijkstra = new dijkstra($vehicleGraph);
+    $path = $dijkstra->shortestPaths('1', '6')[0];
+
+    $distance = 0;
+    for($i =1; $i <= count($path); $i++){
+        $distance += $vehicleGraph[$path[$i-1]][$path[$i]];
+    }
+    var_dump($distance);
+    print_r($path);
+}
+
+
+{
+    $vehicleGraph = [];
+    foreach ($data as $index => $path) {
+        $vehicleGraph[$path['from']][$path['to']] = $path['vehicle']['time'];
+    }
+
+    $dijkstra = new dijkstra($vehicleGraph);
+    $path = $dijkstra->shortestPaths('1', '6')[0];
+
+    $distance = 0;
+    for($i =1; $i <= count($path); $i++){
+        $distance += $vehicleGraph[$path[$i-1]][$path[$i]];
+    }
+    var_dump($distance);
+    print_r($path);
+}
+
+{
+    $vehicleGraph = [];
+    foreach ($data as $index => $path) {
+        $vehicleGraph[$path['from']][$path['to']] = $path['vehicle']['distance'];
+    }
+
+    $dijkstra = new dijkstra($vehicleGraph);
+    $path = $dijkstra->shortestPaths('1', '6')[0];
+
+    $distance = 0;
+    for($i =1; $i <= count($path); $i++){
+        $distance += $vehicleGraph[$path[$i-1]][$path[$i]];
+    }
+    var_dump($distance);
+    print_r($path);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -24,7 +88,7 @@ $data = json_decode($string, true);
 //echo json_encode($graph1);
 
 
-
+/*
 
 foreach ($data as $index => $path) {
     ($path ["from"] . "-" . $path ["to"] . "\r\n");
