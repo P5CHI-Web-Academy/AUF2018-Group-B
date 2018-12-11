@@ -1,0 +1,30 @@
+.result {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  // background: #333333;
+  top: 0;
+
+  &_overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #cccccc;
+    opacity: .7;
+    z-index: 1;
+  }
+
+  &_body {
+    display: block;
+    position: relative;
+    opacity: 1;
+    z-index: 2;
+    background: #282c34;
+    width: 50%;
+    height: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 auto;
+    color: antiquewhite;
+  }
+}
