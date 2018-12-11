@@ -1,6 +1,6 @@
 <template>
   <div class="result">
-    <el-dialog title="Shortest Path" :visible.sync="dialogVisible">
+    <el-dialog title="Le plus court chemin" :visible.sync="dialogVisible">
       <downloadExcel type="csv" :data="gridData">Ouvrir SVG file</downloadExcel>
       <el-table :data="gridData">
         <el-table-column property="Distance" label="Distance" width="150"></el-table-column>
