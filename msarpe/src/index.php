@@ -19,14 +19,14 @@ $data = json_decode($string, true);
         for ($i = 1; $i <= count($path); $i++) {
             $distance += $vehicleGraph[$path[$i - 1]][$path[$i]];
         }
-        var_dump($distance);
-        print_r($path);
+     //   var_dump($distance);
+     //   print_r($path);
 
         $arr = $path;
         echo "Path:", json_encode($arr);
 
-        $arr = $distance;
-        echo "Price:", json_encode($arr);
+        $int = $distance;
+        echo "Price:", json_encode($int);
 
 
 {
@@ -42,14 +42,15 @@ $data = json_decode($string, true);
         for ($i = 1; $i <= count($path); $i++) {
             $distance += $vehicleGraph[$path[$i - 1]][$path[$i]];
         }
-        var_dump($distance);
-        print_r($path);
+      //  var_dump($distance);
+      //  print_r($path);
 
         $arr = $path;
+    echo "<br>";
         echo "Path:", json_encode($arr);
 
-        $arr = $distance;
-        echo "Time:", json_encode($arr);
+        $int = $distance;
+        echo "Time:", json_encode($int);
 }
 
 {
@@ -65,13 +66,14 @@ $data = json_decode($string, true);
     for ($i = 1; $i <= count($path); $i++) {
         $distance += $vehicleGraph[$path[$i - 1]][$path[$i]];
     }
-    var_dump($distance);
-    print_r($path);
+  //  var_dump($distance);
+ //   print_r($path);
 
 
     $arr = $path;
+    echo "<br>";
     echo "Path:", json_encode($arr);
 
-    $arr = $distance;
-    echo "Distance:", json_encode($arr);
+    $int = $distance;
+    echo "Distance:", json_encode($int);
 }
