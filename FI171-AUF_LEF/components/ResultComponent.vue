@@ -1,11 +1,11 @@
 <template>
   <div class="result">
     <el-dialog title="Shortest Path" :visible.sync="dialogVisible">
-      <downloadExcel type="csv" :data="gridData">Download Data</downloadExcel>
+      <downloadExcel type="csv" :data="gridData">Ouvrir SVG file</downloadExcel>
       <el-table :data="gridData">
-        <el-table-column property="date" label="Date" width="150"></el-table-column>
-        <el-table-column property="name" label="Name" width="200"></el-table-column>
-        <el-table-column property="address" label="Address"></el-table-column>
+        <el-table-column property="Distance" label="Distance" width="150"></el-table-column>
+        <el-table-column property="Temps" label="Temps" width="200"></el-table-column>
+        <el-table-column property="Prix" label="Prix"></el-table-column>
       </el-table>
     </el-dialog>
     <!-- {{nodesMap}} -->

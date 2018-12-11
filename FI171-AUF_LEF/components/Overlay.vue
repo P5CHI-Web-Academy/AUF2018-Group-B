@@ -22,7 +22,7 @@ export default {
 <style scoped>
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 1.9s;
+  transition: opacity 3s;
 }
 .fade-enter,
 .fade-leave-to {
