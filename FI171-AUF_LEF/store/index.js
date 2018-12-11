@@ -4,152 +4,98 @@ const store = () => {
   return new Vuex.Store({
     state: {
       noduri: {
-        '#1': [6, 8],
-        '#2': [4, 9],
-        '#3': [8, 6],
-        '#4': [12, 7],
-        '#5': [14, 4],
-        '#6': [22, 8]
+        '1': [4, 2],
+        '2': [3, 9],
+        '3': [8, 6],
+        '4': [12, 10],
+        '5': [14, 4],
+        '6': [22, 2]
       },
-      padding: 40,
+      padding: 50,
       arcs: [{
-          from: '#1',
-          to: '#2',
+          from: '1',
+          to: '2',
           vehicle: {
+            distance: 2,
             price: 12,
-            time: 5,
-            distance: 24
+            time: 30
           }
         },
         {
-          from: '#2',
-          to: '#5',
+          from: '1',
+          to: '3',
           vehicle: {
+            distance: 1,
             price: 12,
-            time: 5,
-            distance: 24
+            time: 30
           }
         },
         {
-          from: '#5',
-          to: '#3',
+          from: '1',
+          to: '5',
           vehicle: {
+            distance: 3,
             price: 12,
-            time: 5,
-            distance: 24
+            time: 30
           }
         },
         {
-          from: '#3',
-          to: '#4',
+          from: '2',
+          to: '4',
           vehicle: {
+            distance: 2.7,
             price: 12,
-            time: 5,
-            distance: 24
+            time: 30
           }
         },
         {
-          from: '#4',
-          to: '#6',
+          from: '4',
+          to: '5',
           vehicle: {
+            distance: 1.9,
             price: 12,
-            time: 5,
-            distance: 24
+            time: 30
           }
         },
         {
-          from: '#5',
-          to: '#6',
+          from: '4',
+          to: '6',
           vehicle: {
+            distance: 4,
             price: 12,
-            time: 5,
-            distance: 24
+            time: 30
           }
         },
         {
-          from: '#1',
-          to: '#3',
+          from: '5',
+          to: '6',
           vehicle: {
+            distance: 3.5,
             price: 12,
-            time: 5,
-            distance: 24
-          }
-        },
-        {
-          from: '#3',
-          to: '#4',
-          vehicle: {
-            price: 12,
-            time: 5,
-            distance: 24
-          }
-        },
-        {
-          from: '#4',
-          to: '#6',
-          vehicle: {
-            price: 12,
-            time: 5,
-            distance: 24
-          }
-        },
-        {
-          from: '#2',
-          to: '#5',
-          vehicle: {
-            price: 12,
-            time: 5,
-            distance: 24
-          }
-        },
-        {
-          from: '#5',
-          to: '#3',
-          vehicle: {
-            price: 12,
-            time: 5,
-            distance: 24
-          }
-        },
-        {
-          from: '#5',
-          to: '#6',
-          vehicle: {
-            price: 12,
-            time: 5,
-            distance: 24
-          }
-        },
-        {
-          from: '#4',
-          to: '#6',
-          vehicle: {
-            price: 12,
-            time: 5,
-            distance: 18
+            time: 30
           }
         }
       ],
       showResult: false,
       gridData: [{
-          date: '2016-05-02',
-          name: 'John Smith',
-          address: 'No.1518,  Jinshajiang Road, Putuo District'
+          Distance: '2 km',
+          Temps: '1 h ',
+          Prix: '1518'
         },
         {
-          date: '2016-05-04',
-          name: 'John Smith',
-          address: 'No.1518,  Jinshajiang Road, Putuo District'
+          Distance: '4 km',
+          Temps: '2 h',
+          Prix: '1518'
         },
         {
-          date: '2016-05-01',
-          name: 'John Smith',
-          address: 'No.1518,  Jinshajiang Road, Putuo District'
+          Distance: '1 km',
+          Temps: '3 h',
+          Prix: '1518'
         },
         {
-          date: '2016-05-03',
-          name: 'John Smith',
-          address: 'No.1518,  Jinshajiang Road, Putuo District'
+          Distance: '3 km',
+          Temps: '4 h',
+          Prix: '1518'
         }
       ],
       dialogTable: false
