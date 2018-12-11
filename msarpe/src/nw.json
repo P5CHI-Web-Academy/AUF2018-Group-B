@@ -28,7 +28,7 @@
   } ,
   {
     "from": "2" ,
-    "to": "6" ,
+    "to": "final" ,
     "vehicle": {
       "price": 21,
       "time": 5,
@@ -37,7 +37,7 @@
   } ,
   {
     "from": "3" ,
-    "to": "6" ,
+    "to": "final" ,
     "vehicle": {
       "price": 15,
       "time": 5,
@@ -64,7 +64,7 @@
   } ,
   {
     "from": "5" ,
-    "to": "6" ,
+    "to": "final" ,
     "vehicle": {
       "price": 9,
       "time": 5,
@@ -72,7 +72,7 @@
     }
   } ,
   {
-    "from":"6",
-    "to": "7"
+    "from":"final",
+    "to": "new"
   }
 ]
