@@ -1,70 +1,40 @@
 <?php
 
-
 include "dijkstra.php";
 header('Content-Type: application/json');
+header('Access-Control-Allow-Origin: *');
+header('Accept: /');
+header('Access-Control-Allow-Methods: GET, POST');
+header("Access-Control-Allow-Headers: access-control-allow-origin,content-type");
 error_reporting(0);
-/**
- * decode json feile!
- */
-$string = file_get_contents("nw.json");
-$data = json_decode($string, true);
+
+$string = file_get_contents('php://input');
+$jsonData = json_decode($string, true);
 
 $byPrice;
 $byTime;
 $byDistance;
-//byPrice
-{
-    $vehicleGraph = [];
+
+function resolveGraph($graphType,$data){
+    $newGraph = [];
     foreach ($data as $index => $path) {
-        $vehicleGraph[$path['from']][$path['to']] = $path['vehicle']['price'];
+        $newGraph[$path['from']][$path['to']] = $path['vehicle'][$graphType];
     }
 
-    $dijkstra = new dijkstra($vehicleGraph);
+    $dijkstra = new dijkstra($newGraph);
     $path = $dijkstra->shortestPaths('1', 'final')[0];
 
     $distance = 0;
     for ($i = 1; $i <= count($path); $i++) {
-        $distance += $vehicleGraph[$path[$i - 1]][$path[$i]];
+        $distance += $newGraph[$path[$i - 1]][$path[$i]];
     }
 
-    $byPrice = array("graph" => $path, "value" => $distance);
+    return array("graph" => $path, "value" => $distance);
 }
 
-//byTime
-{
-    $vehicleGraph = [];
-    foreach ($data as $index => $path) {
-        $vehicleGraph[$path['from']][$path['to']] = $path['vehicle']['time'];
-    }
 
-    $dijkstra = new dijkstra($vehicleGraph);
-    $path = $dijkstra->shortestPaths('1', 'final')[0];
+$byPrice = resolveGraph('price',$jsonData);
+$byTime = resolveGraph('time',$jsonData);
+$byDistance = resolveGraph('distance',$jsonData);
 
-    $distance = 0;
-    for ($i = 1; $i <= count($path); $i++) {
-        $distance += $vehicleGraph[$path[$i - 1]][$path[$i]];
-    }
-
-    $byTime = array("graph"=> $path,"value"=>$distance);
-}
-
-//byDistance
-    {
-        $vehicleGraph = [];
-        foreach ($data as $index => $path) {
-            $vehicleGraph[$path['from']][$path['to']] = $path['vehicle']['distance'];
-        }
-
-        $dijkstra = new dijkstra($vehicleGraph);
-        $path = $dijkstra->shortestPaths('1', 'final')[0];
-
-        $distance = 0;
-        for ($i = 1; $i <= count($path); $i++) {
-            $distance += $vehicleGraph[$path[$i - 1]][$path[$i]];
-        }
-        $byDistance = array("graph"=>$path,"value"=>$distance);
-    }
-
-    echo json_encode(array("price"=>$byPrice,"time"=>$byTime,"distance"=>$byDistance));
-
+echo json_encode(array("price"=>$byPrice,"time"=>$byTime,"distance"=>$byDistance));
