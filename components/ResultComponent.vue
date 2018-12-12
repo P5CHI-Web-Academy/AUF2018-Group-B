@@ -1,57 +1,36 @@
 <template>
   <div class="result">
     <el-dialog title="Le plus court chemin" :visible.sync="dialogVisible">
+      <h1>{{formatedGrid}}</h1>
       <downloadExcel type="csv" :data="gridData">Ouvrir SVG file</downloadExcel>
-      <el-table :data="gridData">
-        <el-table-column property="Distance" label="Distance" width="150"></el-table-column>
-        <el-table-column property="Temps" label="Temps" width="200"></el-table-column>
-        <el-table-column property="Prix" label="Prix"></el-table-column>
+      <el-table :data="gridData" border style="width: 100%">
+        <el-table-column property="id" label="ID"></el-table-column>
+        <el-table-column property="path" label="PATH"></el-table-column>
+        <el-table-column property="value" label="TOTAL"></el-table-column>
       </el-table>
     </el-dialog>
-    <!-- {{nodesMap}} -->
   </div>
 </template>
 
 <script>
-import Dijkstra from '~/plugins/Dijkstra'
 import { mapState, mapGetters, mapActions } from 'vuex'
-var map = {
-  svg_1: { svg_2: 3, svg_3: 1 },
-  svg_2: { svg_1: 2, svg_3: 1 },
-  svg_3: { svg_1: 4, svg_2: 1 }
-}
-let graph = new Dijkstra(map)
-const dijkstra = new Dijkstra()
+
 export default {
   methods: {
-    ...mapActions(['triggerResult'])
+    ...mapActions(['triggerResult', 'toogleDialog'])
   },
   computed: {
-    ...mapState(['showResult', 'noduri', 'arcs', 'gridData', 'dialogTable']),
+    ...mapState(['showResult', 'noduri', 'arcs', 'gridData']),
 
-    getPath: () => {
-      return graph.findShortestPath('svg_1', 'svg_2')
-    },
-    nodesMap: () => {
-      let map = {}
-      for (const data in noduri) {
-        if (noduri.hasOwnProperty(data)) {
-          const element = noduri[data]
-          console.log(element)
-        }
-      }
-    },
+    formatedGrid() {},
     dialogVisible: {
       get() {
-        return this.dialogTable
+        return this.showResult
       },
       set(val) {
-        this.triggerResult(false)
+        this.triggerResult()
       }
     }
-  },
-  mounted() {
-    //   let map =
   }
 }
 </script>
