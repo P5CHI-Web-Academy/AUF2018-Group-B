@@ -1,7 +1,5 @@
 <?php
-//if(!empty($_POST)){
 
-    var_dump($_POST);
 
 include "dijkstra.php";
 header('Content-Type: application/json');
@@ -15,7 +13,7 @@ $data = json_decode($string, true);
 $byPrice;
 $byTime;
 $byDistance;
-//ByPrice
+//byPrice
 {
     $vehicleGraph = [];
     foreach ($data as $index => $path) {
@@ -33,7 +31,7 @@ $byDistance;
     $byPrice = array("graph" => $path, "value" => $distance);
 }
 
-//ByTime
+//byTime
 {
     $vehicleGraph = [];
     foreach ($data as $index => $path) {
@@ -51,7 +49,7 @@ $byDistance;
     $byTime = array("graph"=> $path,"value"=>$distance);
 }
 
-//ByDistance
+//byDistance
     {
         $vehicleGraph = [];
         foreach ($data as $index => $path) {
@@ -70,4 +68,3 @@ $byDistance;
 
     echo json_encode(array("price"=>$byPrice,"time"=>$byTime,"distance"=>$byDistance));
 
- //   }
