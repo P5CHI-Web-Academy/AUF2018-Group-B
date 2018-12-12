@@ -1,0 +1,14 @@
+@import 'variables';
+@import 'map/map';
+@import 'header/header';
+@import 'aside/index';
+@import 'overlay/overlay';
+@import 'result/result';
+
+.el-main {
+  background-image: url('/map.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding: 0;
+}
