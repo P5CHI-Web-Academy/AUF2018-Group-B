@@ -1,12 +1,12 @@
 <template>
-  <div class="result">
+  <div class="result" v-if="dataExists">
     <el-dialog title="Le plus court chemin" :visible.sync="dialogVisible">
       <h1>{{formatedGrid}}</h1>
       <downloadExcel type="csv" :data="gridData">Ouvrir SVG file</downloadExcel>
       <el-table :data="gridData" border style="width: 100%">
-        <el-table-column property="id" label="ID"></el-table-column>
-        <el-table-column property="path" label="PATH"></el-table-column>
-        <el-table-column property="value" label="TOTAL"></el-table-column>
+        <el-table-column property="id" label="Caractéristiques"></el-table-column>
+        <el-table-column property="path" label="Chemin"></el-table-column>
+        <el-table-column property="value" label="Prix"></el-table-column>
       </el-table>
     </el-dialog>
   </div>
@@ -21,6 +21,7 @@ export default {
   },
   computed: {
     ...mapState(['showResult', 'noduri', 'arcs', 'gridData']),
+    ...mapGetters(['dataExists']),
 
     formatedGrid() {},
     dialogVisible: {
@@ -82,3 +83,4 @@ export default {
   animation-name: fadeOutDown;
 }
 </style>
+

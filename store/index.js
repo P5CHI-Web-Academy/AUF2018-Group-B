@@ -48,7 +48,7 @@ const store = () => {
           }
         ]
 
-        const ip = this.$axios.$post('http://localhost/', {
+        const ip = this.$axios.$post('http://localhost/AUF2018-Group-B/algorithm/',{
           ...parsedData
         })
         ip.then(function(value) {
@@ -89,7 +89,7 @@ const store = () => {
               radius: 15,
               stroke: '#5fb0e4',
               strokeWidth: 2,
-              fill: '#a80808d0'
+              fill: '#a80808'
             }
           ]
           state.points.text = [
@@ -136,7 +136,7 @@ const store = () => {
       }
     },
     getters: {
-      parsedGrid() {}
+      dataExists: state => (state.gridData[0] ? true : false)
     }
   })
 }

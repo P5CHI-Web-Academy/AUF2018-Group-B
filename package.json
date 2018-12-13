@@ -2,7 +2,7 @@
   "name": "Pentalog",
   "version": "1.0.0",
   "description": "My terrific Nuxt.js project",
-  "author": "Alexandru Volchivschi",
+  "author": "fi171",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",

@@ -16,12 +16,12 @@
     <el-row>
       <el-button type="primary" @click="parseResults('plane')">
         <img src="/svg-airplane.svg" alt="Plane" class="aside__icon">
-        Plane
+        Avion
       </el-button>
     </el-row>
     <el-row>
       <input type="file" accept="application/json" @change="addFiles" ref="files" v-show="false">
-      <el-button size="small" type="danger" @click.prevent="$refs.files.click()">Click to upload</el-button>
+      <el-button size="small" type="success" @click.prevent="$refs.files.click()">Télécharger le fichier</el-button>
     </el-row>
   </div>
 </template>
@@ -44,11 +44,7 @@ export default {
     parseResults(payload) {
       this.parseResult(payload), this.triggerResult(true)
     },
-    /**
-     * Upload files
-     *
-     * @param e
-     */
+    
     addFiles(e) {
       const input = e.target
       const reader = new FileReader()

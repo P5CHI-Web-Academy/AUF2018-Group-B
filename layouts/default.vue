@@ -44,10 +44,7 @@ html {
   padding: 10px 30px;
 }
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
+
 
 .button--grey {
   display: inline-block;
@@ -59,8 +56,5 @@ html {
   margin-left: 15px;
 }
 
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
-}
+
 </style>
